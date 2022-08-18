@@ -45,6 +45,9 @@ namespace vae {
 		initVisualizations();
 
 		viewerObject = std::make_unique<VvtGameObject>(VvtGameObject::createGameObject());
+
+		// Change initial position to provide better overview of the SH functions
+		viewerObject->transform.translation = { 10.0f, 0.0f, -40.0f };
 	}
 
 	VvtApp::~VvtApp(){
@@ -245,7 +248,7 @@ namespace vae {
 		std::shared_ptr<VvtModel> pointModel = VvtModel::createModelFromFile(vvtDevice, "../Models/sphere.obj");
 
 		sh::SphericalFunction func = [](double phi, double theta) { return glm::sin(phi) * glm::cos(phi); };
-		SphereContainer sphereFunc1 = { {0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f }, 10.0f, func, pointModel };
+		SphereContainer sphereFunc1 = { {0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f }, 3.0f, func, pointModel };
 		sphereFunctions.push_back(sphereFunc1);
 		sphereFunctions[0].generateSpherePoints();
 	}
@@ -258,11 +261,31 @@ namespace vae {
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
-		ImGui::Begin("Vulkan Template UI");
+		ImGui::Begin("SH Visualizer UI");
 
 		/*
 		* Render ImGui stuff here
 		*/
+		
+		ImGui::BeginTabBar("Menu");
+
+		if (ImGui::BeginTabItem("Info"))
+		{
+			ImGui::TextWrapped("This tool can be used to play around with and visualize SH basis functions and the impact of their coefficients on the reconstruction of an arbitrary spherical function. \
+			\n\n The reconstruction of the original spherical function by taking the sum of the basis functions each weighted by their coefficient is shown on the outer left. To the right of that, the original spherical function is shown. Lastly, the SH basis functions are visualized. Each column represents an order (starting from 0). The columns are ordered by incrementing degree (e.g. [-1, 0, 1]).");
+			ImGui::EndTabItem();
+		}
+
+		if (ImGui::BeginTabItem("Settings"))
+		{
+			if (ImGui::DragFloat3("Rotation (Euler XYZ)", glm::value_ptr(sphereFunctions[0].getRotation()), 0.01f, 0.0f, 2 * glm::pi<float>(), "%.2f"))
+			{
+				sphereFunctions[0].updateRotation();
+			}
+			ImGui::EndTabItem();
+		}
+
+		ImGui::EndTabBar();
 
 		ImGui::End();
 		ImGui::Render();

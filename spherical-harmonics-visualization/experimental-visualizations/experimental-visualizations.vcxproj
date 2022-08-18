@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="basis_container.cpp" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_demo.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
@@ -181,6 +182,7 @@
     <ClCompile Include="vvt_window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="basis_container.hpp" />
     <ClInclude Include="enums.hpp" />
     <ClInclude Include="sphere_container.hpp" />
     <ClInclude Include="keyboard_movement_controller.hpp" />

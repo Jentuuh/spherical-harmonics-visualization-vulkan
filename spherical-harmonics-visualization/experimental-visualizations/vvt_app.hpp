@@ -21,8 +21,8 @@ namespace vae {
 	{
 	public:
 		const float MAX_FRAME_TIME = .1f;
-		static constexpr int WIDTH = 1000;
-		static constexpr int HEIGHT = 700;
+		static constexpr int WIDTH = 1200;
+		static constexpr int HEIGHT = 900;
 
 		VvtApp();
 		~VvtApp();

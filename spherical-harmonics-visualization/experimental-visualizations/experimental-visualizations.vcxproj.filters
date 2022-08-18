@@ -70,6 +70,9 @@
     <ClCompile Include="sphere_container.cpp">
       <Filter>Source Files\Spherical Harmonics</Filter>
     </ClCompile>
+    <ClCompile Include="basis_container.cpp">
+      <Filter>Source Files\Spherical Harmonics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="enums.hpp">
@@ -121,6 +124,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sphere_container.hpp">
+      <Filter>Header Files\Spherical Harmonics</Filter>
+    </ClInclude>
+    <ClInclude Include="basis_container.hpp">
       <Filter>Header Files\Spherical Harmonics</Filter>
     </ClInclude>
   </ItemGroup>
