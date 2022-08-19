@@ -44,7 +44,7 @@ namespace vvt {
 
 		void updateCamera(float frameTime);
 
-		VvtWindow vvtWindow{ WIDTH, HEIGHT, "Experimental Visualizations" };
+		VvtWindow vvtWindow{ WIDTH, HEIGHT, "SH Visualizations" };
 		VvtDevice vvtDevice{ vvtWindow };
 		VvtRenderer vvtRenderer{ vvtWindow, vvtDevice };
 		VvtCamera camera;

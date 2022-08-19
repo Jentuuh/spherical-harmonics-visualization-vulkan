@@ -103,9 +103,10 @@ namespace vvt {
 		}
 
 		// Draw basis functions
+		double maxCoeff = *std::max_element(basisCoeffs.begin(), basisCoeffs.end());;
 		for (auto& b : basisFunctions)
 		{
-			b.render(commandBuffer, pipelineLayout, pointModel);
+			b.render(commandBuffer, pipelineLayout, pointModel, maxCoeff);
 		}
 
 	}

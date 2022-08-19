@@ -10,7 +10,7 @@ namespace vvt {
 		generatePoints(order, degree);
 	}
 
-	void BasisContainer::render(VkCommandBuffer& commandBuffer, VkPipelineLayout& pipelineLayout, std::shared_ptr<VvtModel> pointModel)
+	void BasisContainer::render(VkCommandBuffer& commandBuffer, VkPipelineLayout& pipelineLayout, std::shared_ptr<VvtModel> pointModel, double maxCoeff)
 	{
 		for (auto& p : points)
 		{
@@ -23,10 +23,10 @@ namespace vvt {
 			push.normalMatrix = pointTransform.normalMatrix();
 			if (p.second < 0.0f)
 			{
-				push.color =  {0.0f, 0.0f, abs(coefficient) * abs(p.second) };
+				push.color =  {0.0f, 0.0f, (abs(coefficient)/maxCoeff) * abs(p.second) };
 			}
 			else {
-				push.color = { abs(coefficient) * abs(p.second), 0.0f, 0.0f };
+				push.color = { (abs(coefficient)/maxCoeff) * abs(p.second), 0.0f, 0.0f };
 			}
 
 			vkCmdPushConstants(

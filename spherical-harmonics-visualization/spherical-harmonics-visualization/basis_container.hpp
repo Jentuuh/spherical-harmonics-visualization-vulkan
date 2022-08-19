@@ -13,7 +13,7 @@ namespace vvt {
 	public:
 		BasisContainer(double coeff, int order, int degree, float radius, glm::vec3 pos, glm::vec3 rot);
 
-		void render(VkCommandBuffer& commandBuffer, VkPipelineLayout& pipelineLayout, std::shared_ptr<VvtModel> pointModel);
+		void render(VkCommandBuffer& commandBuffer, VkPipelineLayout& pipelineLayout, std::shared_ptr<VvtModel> pointModel, double maxCoeff);
 
 	private:
 		void generatePoints(int order, int degree);
