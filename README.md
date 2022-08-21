@@ -1,5 +1,8 @@
 # spherical-harmonics-visualization-vulkan
-A Vulkan application to play around with and visualize spherical harmonics.
+A Vulkan application to play around with and visualize spherical harmonics. The application allows you to:
+* Visualize an arbitrary spherical function
+* Visualize the projection of this function into SH basis functions weighted by their coefficients
+* Visualize the reconstruction of the arbitrary spherical function by taking the weighted sum of these basis functions 
 
 # Build (currently Windows Visual Studio only)
 Clone the project, download the [dependencies](https://drive.google.com/drive/folders/11RiEnKvYco3RQDe-qgo2Ftz8tPNr44Kh?usp=sharing) and place the `Libraries` folder in the `./spherical-harmonics-visualization` directory. You should now be able to open up the solution (`spherical-harmonics-visualization/spherical-harmonics-visualization.sln`) in Visual Studio and build and run the project.
@@ -22,6 +25,7 @@ You can change the implementation of the lambda function `sh::SphericalFunction 
 ## User input
 The application features a small UI window which allows you to rotate the spherical function and its reconstruction using XYZ Euler angles. Furthermore the user is able to move through the scene using WASD and tilt the camera using the arrow keys.
 
+# Example visualization
 ![Thumbnail](./thumbnail.png?raw=true "Example visualization")
 
 # Future work
