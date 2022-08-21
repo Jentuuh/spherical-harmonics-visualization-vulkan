@@ -250,7 +250,7 @@ namespace vvt {
 		sh::SphericalFunction func = [](double phi, double theta) { return glm::sin(phi) * glm::cos(phi); };
 		SphereContainer sphereFunc1 = { {0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f }, 3.0f, func, pointModel };
 		sphereFunctions.push_back(sphereFunc1);
-		sphereFunctions[0].generateSpherePoints();
+		sphereFunctions.back().generateSpherePoints();
 	}
 
 
