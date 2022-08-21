@@ -10,7 +10,7 @@
 #include <glm/gtc/constants.hpp>
 
 #define MONTE_CARLO_SAMPLE_AMOUNT 10000
-#define BASIS_FUNCTION_MAX_ORDER 2
+#define BASIS_FUNCTION_MAX_ORDER 4
 
 namespace vvt {
 
