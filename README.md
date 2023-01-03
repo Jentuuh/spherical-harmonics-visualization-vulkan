@@ -29,7 +29,8 @@ The application features a small UI window which allows you to rotate the spheri
 # Example visualization
 ![Thumbnail](./thumbnail.png?raw=true "Example visualization")
 
-# Future work
+# Planned updates
+* Optimize drawing using points instead of sphere objects and coloring via descriptor sets
 * Better setup experience + build support for UNIX systems
 * Dynamic updating of the spherical function, without having to manually change it in the code
 * UI upgrades
